@@ -25,4 +25,5 @@ print(sequence_sum(2,6,2)) #6, 3 Terms
 print(sequence_sum(1,5,1)) #15, 5 Terms
 print(sequence_sum(0,15,3)) #45, 6 Terms
 print(sequence_sum(1,5,3)) #5, 2 Terms
-print(sequence_sum(1, 15, 3))
+print(sequence_sum(-1, -5, -3))
+print(sequence_sum(-24, -2, 22))
