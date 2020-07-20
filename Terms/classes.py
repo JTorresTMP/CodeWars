@@ -19,7 +19,7 @@ class Restaurant():
     def __init__(self, name, cuisine):
         self.name = name
         self.cuisine = cuisine
-        self.number_served = 0
+        self.number_served = 0 #This is a default attribute that is defined within init, so no parameter has to be passed
 
     def describe(self):
         print(f'{self.name} specializes in {self.cuisine} cuisine.')
@@ -182,7 +182,7 @@ class Admin(User):
 
 my_model_3 = ElectricCar('tesla', 'model 3', '2019')
 
-print(my_model_3.get_descriptive_name())
-my_model_3.battery.get_range()
-my_model_3.battery.upgrade_battery()
-my_model_3.battery.get_range()
+# print(my_model_3.get_descriptive_name())
+# my_model_3.battery.get_range()
+# my_model_3.battery.upgrade_battery()
+# my_model_3.battery.get_range()
