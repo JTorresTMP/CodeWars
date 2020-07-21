@@ -186,3 +186,21 @@ my_model_3 = ElectricCar('tesla', 'model 3', '2019')
 # my_model_3.battery.get_range()
 # my_model_3.battery.upgrade_battery()
 # my_model_3.battery.get_range()
+
+
+#Corey Schafer
+
+class Employee:
+    
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = f'{first}.{last}@email.com'
+
+    def full_name(self):
+        return f'Full Name: {self.first.title()} {self.last.title()}'
+
+test_user = Employee('John', 'Doe', 40000)
+
+print(test_user.full_name()) #We need parentheses here because we are running a method and not reading an attribute
