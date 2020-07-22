@@ -207,7 +207,7 @@ class Employee:
         return f'Full Name: {self.first.title()} {self.last.title()}'
 
     def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)
+        self.pay = int(self.pay * self.raise_amount) #Using Self instead of Class for raise_amount
         return self.pay
 
 print(Employee.count_of_employees)
