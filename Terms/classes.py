@@ -192,15 +192,35 @@ my_model_3 = ElectricCar('tesla', 'model 3', '2019')
 
 class Employee:
     
+    raise_amount = 1.04 #This is a class variable
+    count_of_employees = 0
+
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
         self.pay = pay
         self.email = f'{first}.{last}@email.com'
+        Employee.count_of_employees += 1 #Don't use self in this intance since you want to save this value
+        #to the class and not the instance
 
     def full_name(self):
         return f'Full Name: {self.first.title()} {self.last.title()}'
 
-test_user = Employee('John', 'Doe', 40000)
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+        return self.pay
 
-print(test_user.full_name()) #We need parentheses here because we are running a method and not reading an attribute
+print(Employee.count_of_employees)
+test_user = Employee('John', 'Doe', 40000)
+user_2 = Employee('Jane', 'Doe', 45000)
+
+# print(test_user.full_name()) #We need parentheses here because we are running a method and not reading an attribute
+# print(test_user.apply_raise())
+# print(test_user.raise_amount)
+
+# #Class Variables
+# We need to access class variables with self.variable even if these variables were defined within the scope of the class
+print(Employee.count_of_employees)
+test_user.raise_amount = 1.06
+print(test_user.__dict__)
+print(user_2.__dict__)
