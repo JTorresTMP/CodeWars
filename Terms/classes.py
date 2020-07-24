@@ -210,7 +210,24 @@ class Employee:
         self.pay = int(self.pay * self.raise_amount)
         return self.pay
 
-print(Employee.count_of_employees)
+    @classmethod #This is how you define a class method
+    def set_raise_amount(cls, amount):
+        cls.raise_amount = amount
+    
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+    
+    @staticmethod #defining a static method
+    def is_workday(day):
+        if day.weekday >= 5:
+            return False
+        else:
+            return True
+        #return not day.weekday >= 5
+
+
 test_user = Employee('John', 'Doe', 40000)
 user_2 = Employee('Jane', 'Doe', 45000)
 
@@ -220,7 +237,19 @@ user_2 = Employee('Jane', 'Doe', 45000)
 
 # #Class Variables
 # We need to access class variables with self.variable even if these variables were defined within the scope of the class
-print(Employee.count_of_employees)
-test_user.raise_amount = 1.06
-print(test_user.__dict__)
-print(user_2.__dict__)
+# print(Employee.count_of_employees)
+# test_user.raise_amount = 1.06
+# print(test_user.__dict__)
+# print(user_2.__dict__)
+
+#Class Methods and Static Methods
+
+emp1 = 'Mike-Wazowki-75000'
+
+new_emp1 = Employee.from_string(emp1)
+print(new_emp1.email)
+
+#Class Methods can be used as alternative constructors as seen above
+
+#Static Methods: Don't pass anything automatically, not the instance or the class
+
