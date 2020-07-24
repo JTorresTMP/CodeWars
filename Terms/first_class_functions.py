@@ -7,7 +7,7 @@
 # 'available to  other entities. These operations typically include being passed as an argument, returned from'
 # 'a function, and assigned to a variable'
 
-'''In essence, a higher order function is one that can receive another function as an argument, or return a function'''
+'''In essence, a higher order function is one that can receive another function(s) as an argument, or return a function'''
 
 'ASSIGNING FUNCTIONS TO VARIABLES'
 
